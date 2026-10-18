@@ -11,3 +11,4 @@ User-facing changes to [earlylore.com](https://earlylore.com). Dates are release
 - **Research preview site** live in English and Chinese: SaaS ideas worth validating, competitor monitoring and new product ideas, with the research scope and common questions.
 - Vaneform credited as the traffic data source.
 <!-- changelog:end -->
+<!-- synced-through: #14 -->
