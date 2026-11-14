@@ -50,6 +50,7 @@ Nine language editions are listed from `/llms.txt`: English, Simplified Chinese,
 - [Research method](docs/research-method.md)
 - [Data sources and attribution](docs/data-sources-and-attribution.md)
 - [Hosted MCP and Skill quickstart](docs/mcp-and-skill.md)
+- [Look up one competitor](docs/competitor-lookup.md)
 - [CHANGELOG.md](CHANGELOG.md)
 - [Research guide index](articles/README.md)
 
@@ -86,6 +87,6 @@ Text in this repository is licensed under [CC BY 4.0](https://creativecommons.or
 
 引用数字前先打开当场页面。公开页面同时出现过 Design DNA 的 9,700+ 与 40,900+，也分别出现过 4 路与 6 路评估流水线描述，本仓库不把其中任何一个写成唯一现行口径。流量是带来源和观察月份的估算；没有收入记录表示未披露，而不是收入为零。
 
-品牌页 `/brand/` 与 `/zh/brand/` 在 2026-11-10 返回 404。标志与命名工作室以 [/zh/design](https://earlylore.com/zh/design) 为准，标志文件是 <https://earlylore.com/earlylore-mark.png>。托管 MCP 说明见 [docs/mcp-and-skill.md](docs/mcp-and-skill.md)，中文站点入口是 <https://earlylore.com/zh/mcp>。十篇公开指南的索引在 [articles/README.md](articles/README.md)。
+品牌页 `/brand/` 与 `/zh/brand/` 在 2026-11-10 返回 404。标志与命名工作室以 [/zh/design](https://earlylore.com/zh/design) 为准，标志文件是 <https://earlylore.com/earlylore-mark.png>。托管 MCP 说明见 [docs/mcp-and-skill.md](docs/mcp-and-skill.md)，按产品名检索一条竞品的步骤和合成样例见 [docs/competitor-lookup.md](docs/competitor-lookup.md)。中文站点入口是 <https://earlylore.com/zh/mcp>。十篇公开指南的索引在 [articles/README.md](articles/README.md)。
 
 本仓库文字使用 [CC BY 4.0](LICENSE)。该许可只覆盖这些文档，不覆盖 EarlyLore 应用、源码、账户数据或线上目录。

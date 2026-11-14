@@ -1,12 +1,17 @@
 # Hosted MCP server and Skill
 
-Reviewed on 2026-11-10 against:
+Connection snippets were checked again on 2026-11-14 against the live setup page, its Markdown representation, and the client docs linked below. The tool and price table remains the 2026-11-10 reading. Both dates are documentation checks, not product releases.
+
+Reviewed against:
 
 - <https://earlylore.com/mcp>
 - <https://earlylore.com/zh/mcp>
 - <https://earlylore.com/skill.md>
 - <https://earlylore.com/llms.txt>
 - <https://earlylore.com/pricing>
+- <https://code.claude.com/docs/en/mcp>
+- <https://developers.openai.com/codex/mcp/>
+- <https://cursor.com/docs/mcp>
 
 No authenticated call was made to the MCP endpoint while writing this page. Examples use the placeholder `el_live_YOUR_TOKEN` only.
 
@@ -27,7 +32,7 @@ The `/mcp` page says keys start with `el_live_`, that only a SHA-256 hash is sto
 
 This server is account-scoped. Bulk feeds and higher MCP quotas are the commercial offer on <https://earlylore.com/pricing#custom-data-api> (`hello@earlylore.com`). Vaneform's separate API and MCP docs are linked from [data-sources-and-attribution.md](data-sources-and-attribution.md).
 
-Clients named on the public MCP page and its FAQ: Claude Code, Codex, Cursor, Antigravity, Windsurf, and Cline, plus any MCP client that can use streamable HTTP with a Bearer token.
+On 2026-11-14 the setup page publishes four connection blocks: Claude Code, Codex, Cursor, and Other / JSON. The skill file still names Antigravity and Windsurf. No separate file path for those two clients was on the setup page that day. Use the HTTP endpoint and Bearer header in the remote-MCP form that client documents.
 
 ## Connect Claude Code
 
@@ -38,9 +43,21 @@ claude mcp add --transport http earlylore https://earlylore.com/api/mcp \
   --header "Authorization: Bearer el_live_YOUR_TOKEN"
 ```
 
-## Connect Cursor, Codex, Antigravity, or Claude Desktop
+## Connect Codex
 
-The public `/mcp` page uses one JSON document for these clients. For the "Codex / Cursor" tab, add it to `.cursor/mcp.json` in the project or to `~/.cursor/mcp.json`. For the "Antigravity / Generic JSON" tab, the page says to add the same document to `mcp_config.json`.
+The 2026-11-14 setup page puts this in `~/.codex/config.toml`. Codex's own docs use the same `url` and `http_headers` keys, and also read a project `.codex/config.toml`.
+
+```toml
+[mcp_servers.earlylore]
+url = "https://earlylore.com/api/mcp"
+
+[mcp_servers.earlylore.http_headers]
+Authorization = "Bearer el_live_YOUR_TOKEN"
+```
+
+## Connect Cursor
+
+The 2026-11-14 setup page puts this in `.cursor/mcp.json` in the project. Cursor's docs use the same remote shape, `url` plus `headers`, and also document `~/.cursor/mcp.json`. The setup page's Other / JSON block is this same document. It has no `type` field.
 
 ```json
 {
@@ -55,7 +72,23 @@ The public `/mcp` page uses one JSON document for these clients. For the "Codex 
 }
 ```
 
-Windsurf is named as a supported client on the same page. A separate Windsurf-only file path was not published there; use the HTTP endpoint and Bearer header above in that client's remote MCP config.
+## Connect Claude Code with JSON
+
+Claude Code's docs require `type` on a JSON entry that has a `url`. The EarlyLore page at `/mcp` with `Accept: text/markdown` publishes that shape. Its placeholder there is `<your-personal-key>`.
+
+```json
+{
+  "mcpServers": {
+    "earlylore": {
+      "type": "http",
+      "url": "https://earlylore.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer el_live_YOUR_TOKEN"
+      }
+    }
+  }
+}
+```
 
 ## Install the Skill
 
@@ -67,6 +100,11 @@ The public site currently names two save locations:
 - The copy confirmation on `/mcp` says `.claude/skills/earlylore/SKILL.md` or `.cursorrules`.
 
 Put the file where the client you use actually loads a skill. The spec's own setup block repeats the Claude Code command above and then defines four workflows.
+
+Vendor docs checked on 2026-11-14 name these directories. The folder can match the skill `name`, `earlylore-product-architect`:
+
+- Claude Code: `~/.claude/skills/<folder>/SKILL.md` or `.claude/skills/<folder>/SKILL.md` ([skills](https://code.claude.com/docs/en/skills))
+- Codex: `$HOME/.agents/skills/<folder>/SKILL.md` or `$REPO_ROOT/.agents/skills/<folder>/SKILL.md` ([skills](https://developers.openai.com/codex/skills/))
 
 ## Tools and quotas
 
@@ -122,4 +160,6 @@ The skill's other published workflows, all on `/skill.md`:
 - **Workflow C.** Read the local landing page and pricing, then compare them with live competitors and write notes back with `earlylore_save_note_or_evaluate`.
 - **Workflow D.** Draft launch posts from the local repo using `earlylore_get_marketing_playbook`.
 
-A written walkthrough of the same MCP setup is the 2026-11-07 guide [Vibe Coding with Market Intelligence](https://earlylore.com/blog/vibe-coding-market-research-with-mcp-and-claude-code) ([中文](https://earlylore.com/zh/blog/vibe-coding-market-research-with-mcp-and-claude-code)).
+A name-search walkthrough, with a synthetic sample and no evaluation or saved note, is in [competitor-lookup.md](competitor-lookup.md).
+
+A written walkthrough of MCP setup is the 2026-11-07 guide [Vibe Coding with Market Intelligence](https://earlylore.com/blog/vibe-coding-market-research-with-mcp-and-claude-code) ([中文](https://earlylore.com/zh/blog/vibe-coding-market-research-with-mcp-and-claude-code)).
