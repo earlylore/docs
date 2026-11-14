@@ -50,8 +50,31 @@ Nine language editions are listed from `/llms.txt`: English, Simplified Chinese,
 - [Research method](docs/research-method.md)
 - [Data sources and attribution](docs/data-sources-and-attribution.md)
 - [Hosted MCP and Skill quickstart](docs/mcp-and-skill.md)
+- [Look up one competitor](docs/competitor-lookup.md)
+- [Skill source of truth](docs/skill-source.md)
 - [CHANGELOG.md](CHANGELOG.md)
 - [Research guide index](articles/README.md)
+
+## Install the skill
+
+The canonical skill name is `earlylore-product-architect`. The directory is [skills/earlylore-product-architect](skills/earlylore-product-architect/SKILL.md). After this file is on the default branch:
+
+```bash
+npx skills add earlylore/docs --skill earlylore-product-architect
+```
+
+That command is the `skills add` form documented by the skills CLI: a GitHub `owner/repo` source and `--skill` for the frontmatter `name`. The name matches the directory, which is the Agent Skills requirement. Text in the skill is covered by the [CC BY 4.0](LICENSE) license on this repository.
+
+The website still shows the save folders `.claude/skills/earlylore/SKILL.md` and `.agents/skills/earlylore/SKILL.md`. Those folder names are aliases. A 2026-11-10 page also used `earlylore-research`. Use the canonical name for a new install. Details and the drift check are in [docs/skill-source.md](docs/skill-source.md).
+
+The skill's default workflow is the two-read competitor lookup in [docs/competitor-lookup.md](docs/competitor-lookup.md). The sample response [examples/fast-search.synthetic.json](examples/fast-search.synthetic.json) is invented. It is not a catalog row.
+
+Checks that do not install anything:
+
+```bash
+node tests/validate-skill.mjs
+node tests/check-skill-drift.mjs
+```
 
 ## Research guides
 
@@ -86,6 +109,6 @@ Text in this repository is licensed under [CC BY 4.0](https://creativecommons.or
 
 引用数字前先打开当场页面。公开页面同时出现过 Design DNA 的 9,700+ 与 40,900+，也分别出现过 4 路与 6 路评估流水线描述，本仓库不把其中任何一个写成唯一现行口径。流量是带来源和观察月份的估算；没有收入记录表示未披露，而不是收入为零。
 
-品牌页 `/brand/` 与 `/zh/brand/` 在 2026-11-10 返回 404。标志与命名工作室以 [/zh/design](https://earlylore.com/zh/design) 为准，标志文件是 <https://earlylore.com/earlylore-mark.png>。托管 MCP 说明见 [docs/mcp-and-skill.md](docs/mcp-and-skill.md)，中文站点入口是 <https://earlylore.com/zh/mcp>。十篇公开指南的索引在 [articles/README.md](articles/README.md)。
+品牌页 `/brand/` 与 `/zh/brand/` 在 2026-11-10 返回 404。标志与命名工作室以 [/zh/design](https://earlylore.com/zh/design) 为准，标志文件是 <https://earlylore.com/earlylore-mark.png>。托管 MCP 说明见 [docs/mcp-and-skill.md](docs/mcp-and-skill.md)。可安装技能的规范名是 `earlylore-product-architect`，安装命令是 `npx skills add earlylore/docs --skill earlylore-product-architect`。网站上的 `earlylore` 与旧文档里的 `earlylore-research` 只是保存路径别名。竞品检索步骤和合成样例见 [docs/competitor-lookup.md](docs/competitor-lookup.md)。中文站点入口是 <https://earlylore.com/zh/mcp>。十篇公开指南的索引在 [articles/README.md](articles/README.md)。
 
 本仓库文字使用 [CC BY 4.0](LICENSE)。该许可只覆盖这些文档，不覆盖 EarlyLore 应用、源码、账户数据或线上目录。

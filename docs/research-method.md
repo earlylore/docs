@@ -36,4 +36,4 @@ The public changelog has described the evaluation pipeline as both 6-lane (2026-
 1. **Search.** Describe an idea, product, or website, or open the category and creator directories.
 2. **Compare.** Read who already addresses the same job, with pricing, traffic month, and any disclosed revenue.
 3. **Follow.** Track the dated changes that make the market legible, and save notes in the signed-in workspace when the account has that feature.
-4. **Build from evidence.** When a coding agent is connected, use the hosted MCP server and [skill spec](https://earlylore.com/skill.md) so generated pages and prices stay tied to a source. Setup is in [mcp-and-skill.md](mcp-and-skill.md).
+4. **Build from evidence.** When a coding agent is connected, use the hosted MCP server and the installable skill [earlylore-product-architect](../skills/earlylore-product-architect/SKILL.md). The default pass is the two-read lookup in [competitor-lookup.md](competitor-lookup.md). The hosted spec remains <https://earlylore.com/skill.md>. Setup is in [mcp-and-skill.md](mcp-and-skill.md). Missing traffic or revenue stays unknown.
