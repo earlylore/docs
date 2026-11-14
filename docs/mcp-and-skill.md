@@ -1,5 +1,7 @@
 # Hosted MCP server and Skill
 
+The Claude Code command, the skill save folders, and the plan rows in [Access and usage](#access-and-usage-on-2026-11-14) were read again on 2026-11-14 from <https://earlylore.com/mcp>. The per-tool quota table remains the 2026-11-10 reading. Both dates are documentation checks, not product releases. The installable skill added in this repository is [earlylore-product-architect](../skills/earlylore-product-architect/SKILL.md). Which copy is canonical for installation is recorded in [skill-source.md](skill-source.md).
+
 Reviewed on 2026-11-10 against:
 
 - <https://earlylore.com/mcp>
@@ -40,7 +42,9 @@ claude mcp add --transport http earlylore https://earlylore.com/api/mcp \
 
 ## Connect Cursor, Codex, Antigravity, or Claude Desktop
 
-The public `/mcp` page uses one JSON document for these clients. For the "Codex / Cursor" tab, add it to `.cursor/mcp.json` in the project or to `~/.cursor/mcp.json`. For the "Antigravity / Generic JSON" tab, the page says to add the same document to `mcp_config.json`.
+This JSON is the 2026-11-10 reading. On 2026-11-14 the page still had Codex, Cursor, and Other / JSON tabs, and only the Claude Code command was in the server HTML. Copy the current block from <https://earlylore.com/mcp> when the tab text differs from the document below.
+
+On 2026-11-10 the public `/mcp` page used one JSON document for these clients. For the "Codex / Cursor" tab, add it to `.cursor/mcp.json` in the project or to `~/.cursor/mcp.json`. For the "Antigravity / Generic JSON" tab, the page said to add the same document to `mcp_config.json`.
 
 ```json
 {
@@ -55,22 +59,46 @@ The public `/mcp` page uses one JSON document for these clients. For the "Codex 
 }
 ```
 
-Windsurf is named as a supported client on the same page. A separate Windsurf-only file path was not published there; use the HTTP endpoint and Bearer header above in that client's remote MCP config.
+On 2026-11-10, Windsurf was named as a supported client on the same page. A separate Windsurf-only file path was not published there. A FAQ answer still present in the site bundle on 2026-11-14 names Claude Code, Cursor, Antigravity, Windsurf, and Cline for streamable HTTP with a Bearer token. Use the endpoint and header those clients document.
 
 ## Install the Skill
 
-The canonical spec is <https://earlylore.com/skill.md>. This repository does not vendor a copy, so the website copy stays the current one.
+The canonical skill name is `earlylore-product-architect`. It is the `name` in <https://earlylore.com/skill.md> and in <https://earlylore.com/.well-known/agent-skills/index.json>. This repository now contains an installable copy at [skills/earlylore-product-architect/SKILL.md](../skills/earlylore-product-architect/SKILL.md). The website file and this file are two copies. [skill-source.md](skill-source.md) says how to compare them.
 
-The public site currently names two save locations:
+After this directory is on the default branch, the skills CLI command is:
 
-- The FAQ on `/mcp` says to save it as `~/.claude/skills/earlylore-research/SKILL.md`.
-- The copy confirmation on `/mcp` says `.claude/skills/earlylore/SKILL.md` or `.cursorrules`.
+```bash
+npx skills add earlylore/docs --skill earlylore-product-architect
+```
 
-Put the file where the client you use actually loads a skill. The spec's own setup block repeats the Claude Code command above and then defines four workflows.
+The CLI discovers `skills/<name>/SKILL.md`. The frontmatter `name` and the directory name are the same, which is what the Agent Skills specification requires. No npm package is published for this skill.
+
+On 2026-11-14 the setup page showed these save folders:
+
+- Claude Code: `.claude/skills/earlylore/SKILL.md`
+- Codex: `.agents/skills/earlylore/SKILL.md`
+
+`earlylore` is a folder alias. The 2026-11-10 reading of the same page also named `~/.claude/skills/earlylore-research/SKILL.md` and `.cursorrules`. The `earlylore-research` folder was not in the 2026-11-14 server HTML. New installs use `earlylore-product-architect`. An older file under `earlylore` or `earlylore-research` can be replaced with this skill. Do not keep a second `SKILL.md` whose name and directory disagree.
+
+The hosted skill's setup block repeats the Claude Code command above and then defines four workflows. The installable skill keeps the competitor lookup as the default and gates notes, new evaluations, live capture, and design extraction on an explicit request in the current message.
+
+## Access and usage on 2026-11-14
+
+The server-rendered <https://earlylore.com/mcp> page showed:
+
+| Plan | MCP calls | Full product details |
+| --- | --- | --- |
+| Free | 30 / day | 30 / month |
+| Pro | 200 / day | 300 / month |
+| Max | 1,000 / day | 3,000 / month |
+
+The same page said every tool call counts toward the daily MCP limit, product inspection uses the full-detail allowance, and design analysis and new evaluations use their own allowances. It also showed a banner, "New users: 24h Pro free". That banner is page text from 2026-11-14, not a quota encoded in the skill. Confirm <https://earlylore.com/pricing> before quoting a price or a limit.
+
+Codex, Cursor, and Other / JSON were tab labels on that page. Only the Claude Code command was present in the server HTML. Copy the other client blocks from the live page. The JSON document under [Connect Cursor, Codex, Antigravity, or Claude Desktop](#connect-cursor-codex-antigravity-or-claude-desktop) remains the 2026-11-10 reading.
 
 ## Tools and quotas
 
-The table below is the tool list printed on <https://earlylore.com/mcp> on 2026-11-10. Plan checkout, pack contents, and the comparison matrix on [/pricing](https://earlylore.com/pricing) are the billing pages. Re-read both before quoting a limit. The two pages use different wording for some caps.
+The table below is the tool list printed on <https://earlylore.com/mcp> on 2026-11-10. It is an older per-tool reading. The plan rows in the previous section are the 2026-11-14 page. Plan checkout, pack contents, and the comparison matrix on [/pricing](https://earlylore.com/pricing) are the billing pages. Re-read both before quoting a limit. The pages have used different wording for some caps. Argument names checked against `GET https://earlylore.com/api/mcp` on 2026-11-14 are in [the skill tool reference](../skills/earlylore-product-architect/references/tools.md).
 
 | Tool | Availability printed on `/mcp` | Quota cost printed on `/mcp` |
 |---|---|---|
@@ -122,4 +150,6 @@ The skill's other published workflows, all on `/skill.md`:
 - **Workflow C.** Read the local landing page and pricing, then compare them with live competitors and write notes back with `earlylore_save_note_or_evaluate`.
 - **Workflow D.** Draft launch posts from the local repo using `earlylore_get_marketing_playbook`.
 
-A written walkthrough of the same MCP setup is the 2026-11-07 guide [Vibe Coding with Market Intelligence](https://earlylore.com/blog/vibe-coding-market-research-with-mcp-and-claude-code) ([中文](https://earlylore.com/zh/blog/vibe-coding-market-research-with-mcp-and-claude-code)).
+A name-search walkthrough, with a synthetic sample and no evaluation or saved note, is in [competitor-lookup.md](competitor-lookup.md).
+
+A written walkthrough of MCP setup is the 2026-11-07 guide [Vibe Coding with Market Intelligence](https://earlylore.com/blog/vibe-coding-market-research-with-mcp-and-claude-code) ([中文](https://earlylore.com/zh/blog/vibe-coding-market-research-with-mcp-and-claude-code)).

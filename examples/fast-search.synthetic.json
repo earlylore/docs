@@ -1,0 +1,21 @@
+{
+  "synthetic": true,
+  "notAnObservation": true,
+  "notice": "Invented illustration. Northwind Ledger is not an EarlyLore catalog row. The reserved domain northwind-ledger.invalid is not a website to request.",
+  "contentText": {
+    "mode": "fast",
+    "query": "northwind ledger",
+    "total": 1,
+    "products": [
+      {
+        "name": "Northwind Ledger",
+        "slug": "synthetic-northwind-ledger",
+        "domain": "northwind-ledger.invalid",
+        "websiteUrl": "https://northwind-ledger.invalid",
+        "tagline": "Synthetic tagline for the response shape.",
+        "traffic": null,
+        "revenue": null
+      }
+    ]
+  }
+}
