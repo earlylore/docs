@@ -16,7 +16,7 @@ The authoritative short index is [earlylore.com/llms.txt](https://earlylore.com/
 | --- | --- | --- |
 | Catalog size | Homepage and live guides reference 440,000+ tracked software products, 90,000+ creators, and 249 niches | The page you used, with the date you read it |
 | Design DNA | Captured first-screen layout, typography, and `:root` CSS color/radius evidence across analyzed sites | [/design](https://earlylore.com/design) |
-| Idea evaluations | Standard (4 research perspectives) and Deep (8-seat orthogonal roundtable + 4-week GTM timeline); curated Deep samples linked from `/evaluate` | [/evaluate](https://earlylore.com/evaluate) |
+| Idea evaluations | Standard (4 research perspectives) and Deep (8-seat orthogonal roundtable + 4-week GTM timeline); curated Deep samples linked from `/evaluate` with `Accept: text/markdown` support on `/evaluations/<id>` | [/evaluate](https://earlylore.com/evaluate) |
 | Revenue coverage | Disclosed or payment-verified revenue is an optional discovery dimension (~3.6% of browse products; missing revenue remains undisclosed) | The page defining the population |
 | Markdown negotiation | Public research routes serve `text/markdown` for `Accept: text/markdown` requests | [/llms.txt](https://earlylore.com/llms.txt) |
 
@@ -36,7 +36,7 @@ Traffic figures are provider estimates and need an observation month. Revenue is
 | Monthly market reports | <https://earlylore.com/reports> |
 | Plans and pricing | <https://earlylore.com/pricing> |
 | Public changelog | <https://earlylore.com/changelog> |
-| Research guides (14) | <https://earlylore.com/blog> |
+| Research guides (16) | <https://earlylore.com/blog> |
 | Hosted MCP guide | <https://earlylore.com/mcp> |
 | Official MCP setup repo | <https://github.com/earlylore/earlylore-mcp> |
 | MCP server card | <https://earlylore.com/api/mcp/server-card> |
@@ -87,7 +87,7 @@ node tests/check-skill-drift.mjs
 
 ## Research guides
 
-Fourteen guides are live on [/blog](https://earlylore.com/blog) as of **2026-11-20**. Summaries, update dates, and bilingual URLs are tracked in [articles/README.md](articles/README.md). The website is the canonical text.
+Sixteen guides are live on [/blog](https://earlylore.com/blog) as of **2026-11-20**. Summaries, update dates, and bilingual URLs are tracked in [articles/README.md](articles/README.md). The website is the canonical text.
 
 <!-- articles:start -->
 - [How to Validate a Startup or Micro-SaaS Idea Before Writing Code (2026 Framework)](https://earlylore.com/blog/how-to-validate-a-saas-idea)
@@ -104,6 +104,8 @@ Fourteen guides are live on [/blog](https://earlylore.com/blog) as of **2026-11-
 - [Cursor vs. Windsurf vs. Bolt.new vs. Lovable: AI Coding & Vibe Coding Benchmark (2026)](https://earlylore.com/blog/cursor-vs-windsurf-vs-bolt-vs-lovable-traffic-and-pricing-benchmark)
 - [Supabase, Clerk, Resend, PostHog & Cal.com: Developer & COSS Growth Case Studies](https://earlylore.com/blog/supabase-clerk-resend-posthog-coss-growth-and-pricing-case-studies)
 - [Lean High-ARPU Micro-SaaS Case Studies: $5K–$50K/mo MRR Under 10,000 Visits](https://earlylore.com/blog/lean-high-arpu-micro-saas-case-studies-under-10k-visits)
+- [Best MCP Servers for Cursor, Claude Code & Codex (2026): Market Research, Docs, Scraping & Backend Stack Compared](https://earlylore.com/blog/best-mcp-servers-for-cursor-claude-code-and-product-research)
+- [SaaS Developer Stack Pricing & Alternatives (2026): Clerk vs. Auth0, Resend vs. Loops, Supabase vs. Neon & Plausible vs. Umami](https://earlylore.com/blog/saas-dev-stack-pricing-and-alternatives-clerk-resend-supabase-plausible)
 <!-- articles:end -->
 
 ## Plans
@@ -127,6 +129,6 @@ Text in this repository is licensed under [CC BY 4.0](https://creativecommons.or
 
 本文件对照公开页面的日期是 **2026-11-20**（文档同步日，非产品发布日），当时公开更新日志最新条目为 **v1.10 (2026-11-10)**。网站提供 5 种 UI 语言（英文、简体中文、繁体中文、日文、韩文）；核心内容页与精选 Deep 示例评估在英文及繁简中文下开放搜索引擎索引。流量是带来源和观察月份的估算；没有收入记录表示未披露，而不是收入为零。
 
-托管 MCP 说明见 [docs/mcp-and-skill.md](docs/mcp-and-skill.md)。可安装技能规范名为 `earlylore-product-architect`，可通过 `npx skills add earlylore/earlylore-mcp --skill earlylore-product-architect` 或 `npx skills add earlylore/docs --skill earlylore-product-architect` 安装。网站中文 MCP 入口是 <https://earlylore.com/zh/mcp>，点子评估入口是 <https://earlylore.com/zh/evaluate>，十四篇公开研究指南的索引在 [articles/README.md](articles/README.md)。
+托管 MCP 说明见 [docs/mcp-and-skill.md](docs/mcp-and-skill.md)。可安装技能规范名为 `earlylore-product-architect`，可通过 `npx skills add earlylore/earlylore-mcp --skill earlylore-product-architect` 或 `npx skills add earlylore/docs --skill earlylore-product-architect` 安装。网站中文 MCP 入口是 <https://earlylore.com/zh/mcp>，点子评估入口是 <https://earlylore.com/zh/evaluate>（精选深度样本 `/evaluations/<id>` 支持 Markdown 访问），十六篇公开研究指南的索引在 [articles/README.md](articles/README.md)。
 
 本仓库文字使用 [CC BY 4.0](LICENSE)。该许可只覆盖这些文档，不覆盖 EarlyLore 应用、源码、账户数据或线上目录。

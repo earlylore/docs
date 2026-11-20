@@ -1,6 +1,6 @@
 # Research guides
 
-Index of the 14 research guides published on [earlylore.com/blog](https://earlylore.com/blog) (verified **2026-11-20**). The website is the canonical text. This page records the title, latest update date on `/blog`, and bilingual URLs without republishing the guide text.
+Index of the 16 research guides published on [earlylore.com/blog](https://earlylore.com/blog) (verified **2026-11-20**). The website is the canonical text. This page records the title, latest update date on `/blog`, and bilingual URLs without republishing the guide text.
 
 <!-- articles:start -->
 | Guide | Updated | English | 中文 |
@@ -19,6 +19,8 @@ Index of the 14 research guides published on [earlylore.com/blog](https://earlyl
 | Cursor vs. Windsurf vs. Bolt.new vs. Lovable: AI Coding & Vibe Coding Traffic, Pricing & Retention Case Study (2026) / AI 编程产品流量与定价深度对比 | 2026-11-10 | <https://earlylore.com/blog/cursor-vs-windsurf-vs-bolt-vs-lovable-traffic-and-pricing-benchmark> | <https://earlylore.com/zh/blog/cursor-vs-windsurf-vs-bolt-vs-lovable-traffic-and-pricing-benchmark> |
 | Supabase, Clerk, Resend, PostHog & Cal.com: How Breakout Developer & COSS Products Scale Traffic and Revenue / 开发者工具与开源商业化增长案例 | 2026-11-10 | <https://earlylore.com/blog/supabase-clerk-resend-posthog-coss-growth-and-pricing-case-studies> | <https://earlylore.com/zh/blog/supabase-clerk-resend-posthog-coss-growth-and-pricing-case-studies> |
 | Lean High-ARPU Micro-SaaS Case Studies: How 990+ Indie Products Earn $5K–$50K/mo MRR with Under 10,000 Monthly Visits / 月访问量不足 1 万的高客单价 Micro-SaaS 案例 | 2026-11-10 | <https://earlylore.com/blog/lean-high-arpu-micro-saas-case-studies-under-10k-visits> | <https://earlylore.com/zh/blog/lean-high-arpu-micro-saas-case-studies-under-10k-visits> |
+| Best MCP Servers for Cursor, Claude Code & Codex (2026): Market Research, Docs, Scraping & Backend Stack Compared / Cursor、Claude Code 与 Codex 高效 MCP 推荐对比 | 2026-11-20 | <https://earlylore.com/blog/best-mcp-servers-for-cursor-claude-code-and-product-research> | <https://earlylore.com/zh/blog/best-mcp-servers-for-cursor-claude-code-and-product-research> |
+| SaaS Developer Stack Pricing & Alternatives (2026): Clerk vs. Auth0, Resend vs. Loops, Supabase vs. Neon & Plausible vs. Umami / SaaS 开发者基础设施定价与平替对比 | 2026-11-20 | <https://earlylore.com/blog/saas-dev-stack-pricing-and-alternatives-clerk-resend-supabase-plausible> | <https://earlylore.com/zh/blog/saas-dev-stack-pricing-and-alternatives-clerk-resend-supabase-plausible> |
 <!-- articles:end -->
 
 Guides cite live dataset figures; use each guide's own publication date and wording when quoting. See [data sources](../docs/data-sources-and-attribution.md).
