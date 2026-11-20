@@ -1,4 +1,4 @@
-> **This is the official EarlyLore docs and public resources repository.** The EarlyLore application source is proprietary and is not published here. For the dedicated hosted MCP configuration repo and registry card, see [earlylore/earlylore-mcp](https://github.com/earlylore/earlylore-mcp). [CC BY 4.0](LICENSE) covers the text in this repository.
+> **This is the official EarlyLore docs and public resources repository.** The EarlyLore application source is proprietary and is not published here. For the dedicated hosted MCP configuration repo and registry card, see [earlylore/earlylore-mcp](https://github.com/earlylore/earlylore-mcp); for open CC BY 4.0 SaaS/Design benchmark CSV & JSON snapshots, see [earlylore/saas-benchmarks](https://github.com/earlylore/saas-benchmarks). [CC BY 4.0](LICENSE) covers the text in this repository.
 
 # EarlyLore
 
@@ -39,6 +39,7 @@ Traffic figures are provider estimates and need an observation month. Revenue is
 | Research guides (16) | <https://earlylore.com/blog> |
 | Hosted MCP guide | <https://earlylore.com/mcp> |
 | Official MCP setup repo | <https://github.com/earlylore/earlylore-mcp> |
+| Open benchmark dataset (CC BY 4.0) | <https://github.com/earlylore/saas-benchmarks> |
 | MCP server card | <https://earlylore.com/api/mcp/server-card> |
 | Skill spec | <https://earlylore.com/skill.md> |
 | LLM index | <https://earlylore.com/llms.txt> |
@@ -125,7 +126,7 @@ Text in this repository is licensed under [CC BY 4.0](https://creativecommons.or
 
 ## 中文
 
-**EarlyLore 用来在写代码之前对照真实软件产品做验证。** 公开站点提供点子评估（`/evaluate`）、产品与创作者目录、定价与流量证据、首屏 Design DNA（`/design`）、开源与商业化目录（`/open-source`）、月度市场报告（`/reports`），以及给编程代理使用的托管 MCP 服务。本仓库同步公开说明，应用源码不在这里；独立 MCP 配置与安装仓库请看 [earlylore/earlylore-mcp](https://github.com/earlylore/earlylore-mcp)。
+**EarlyLore 用来在写代码之前对照真实软件产品做验证。** 公开站点提供点子评估（`/evaluate`）、产品与创作者目录、定价与流量证据、首屏 Design DNA（`/design`）、开源与商业化目录（`/open-source`）、月度市场报告（`/reports`），以及给编程代理使用的托管 MCP 服务。本仓库同步公开说明，应用源码不在这里；独立 MCP 配置与安装仓库请看 [earlylore/earlylore-mcp](https://github.com/earlylore/earlylore-mcp)，开放 SaaS 与 Design DNA 基准数据集请看 [earlylore/saas-benchmarks](https://github.com/earlylore/saas-benchmarks)。
 
 本文件对照公开页面的日期是 **2026-11-20**（文档同步日，非产品发布日），当时公开更新日志最新条目为 **v1.10 (2026-11-10)**。网站提供 5 种 UI 语言（英文、简体中文、繁体中文、日文、韩文）；核心内容页与精选 Deep 示例评估在英文及繁简中文下开放搜索引擎索引。流量是带来源和观察月份的估算；没有收入记录表示未披露，而不是收入为零。
 
