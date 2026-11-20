@@ -1,22 +1,24 @@
 # Research guides
 
-Index of guides published on [earlylore.com/blog](https://earlylore.com/blog). The website is the canonical text. This page records the title, the blog-index date, and the URL. It does not republish the guide, and it does not freeze figures that appear inside a guide.
-
-All ten guides below were listed on `/blog` and `/zh/blog` on 2026-11-10. Each index card was dated **2026-11-07**.
+Index of the 14 research guides published on [earlylore.com/blog](https://earlylore.com/blog) (verified **2026-11-20**). The website is the canonical text. This page records the title, latest update date on `/blog`, and bilingual URLs without republishing the guide text.
 
 <!-- articles:start -->
-| Guide | Blog index date | English | 中文 |
-|---|---|---|---|
-| How to Validate a Startup or Micro-SaaS Idea Before Writing Code / 写代码前如何验证 SaaS 与 AI 创业点子 | 2026-11-07 | <https://earlylore.com/blog/how-to-validate-a-saas-idea> | <https://earlylore.com/zh/blog/how-to-validate-a-saas-idea> |
-| 7 Fastest-Growing Micro-SaaS and AI Software Niches / 2026 增长最快的 7 个 Micro-SaaS 与 AI 细分赛道 | 2026-11-07 | <https://earlylore.com/blog/micro-saas-ideas-and-fastest-growing-niches> | <https://earlylore.com/zh/blog/micro-saas-ideas-and-fastest-growing-niches> |
-| SaaS Pricing Benchmarks Across 249 Niches / 249 个软件赛道的 SaaS 定价基准 | 2026-11-07 | <https://earlylore.com/blog/saas-pricing-benchmarks-and-models> | <https://earlylore.com/zh/blog/saas-pricing-benchmarks-and-models> |
-| SaaS Landing Page Design Inspiration / SaaS 落地页首屏设计指南 | 2026-11-07 | <https://earlylore.com/blog/saas-landing-page-design-and-hero-examples> | <https://earlylore.com/zh/blog/saas-landing-page-design-and-hero-examples> |
-| Vibe Coding with Market Intelligence / 在 Claude Code 与 Cursor 中接入 EarlyLore MCP 与 SKILL.md | 2026-11-07 | <https://earlylore.com/blog/vibe-coding-market-research-with-mcp-and-claude-code> | <https://earlylore.com/zh/blog/vibe-coding-market-research-with-mcp-and-claude-code> |
-| How Breakout Indie and AI Products Acquire Users / 独立开发与 AI 新品如何冷启动获客 | 2026-11-07 | <https://earlylore.com/blog/indie-hacker-acquisition-channels-and-revenue-signals> | <https://earlylore.com/zh/blog/indie-hacker-acquisition-channels-and-revenue-signals> |
-| Generative Engine Optimization and llms.txt / GEO 与 llms.txt 实战指南 | 2026-11-07 | <https://earlylore.com/blog/generative-engine-optimization-and-llms-txt-guide> | <https://earlylore.com/zh/blog/generative-engine-optimization-and-llms-txt-guide> |
-| How to Run SaaS Competitor Analysis / SaaS 竞品分析实战 | 2026-11-07 | <https://earlylore.com/blog/saas-competitor-analysis-traffic-and-pricing-monitoring> | <https://earlylore.com/zh/blog/saas-competitor-analysis-traffic-and-pricing-monitoring> |
-| The One-Person AI Company Playbook / 一人公司与独立开发者实战手册 | 2026-11-07 | <https://earlylore.com/blog/solo-founder-and-one-person-ai-company-playbook> | <https://earlylore.com/zh/blog/solo-founder-and-one-person-ai-company-playbook> |
-| Vertical AI Agents and Voice Agent SaaS / 垂直 AI 智能体与语音 Agent 赛道解析 | 2026-11-07 | <https://earlylore.com/blog/vertical-ai-agents-and-voice-agent-saas-niches> | <https://earlylore.com/zh/blog/vertical-ai-agents-and-voice-agent-saas-niches> |
+| Guide | Updated | English | 中文 |
+| --- | --- | --- | --- |
+| How to Validate a Startup or Micro-SaaS Idea Before Writing Code (2026 Framework) / 写代码前如何验证 SaaS 与 AI 创业点子 | 2026-11-07 | <https://earlylore.com/blog/how-to-validate-a-saas-idea> | <https://earlylore.com/zh/blog/how-to-validate-a-saas-idea> |
+| 7 Fastest-Growing Micro-SaaS & AI Software Niches Backed by Traffic Data (2026) / 2026 增长最快的 7 个 Micro-SaaS 与 AI 细分赛道 | 2026-11-07 | <https://earlylore.com/blog/micro-saas-ideas-and-fastest-growing-niches> | <https://earlylore.com/zh/blog/micro-saas-ideas-and-fastest-growing-niches> |
+| SaaS Pricing Benchmarks Across 249 Niches: Subscription, Freemium & Usage Tiers / 249 个软件赛道的 SaaS 定价基准 | 2026-11-07 | <https://earlylore.com/blog/saas-pricing-benchmarks-and-models> | <https://earlylore.com/zh/blog/saas-pricing-benchmarks-and-models> |
+| SaaS Landing Page Design Inspiration: 12 Hero Section Styles & Computed CSS Tokens / SaaS 落地页首屏设计指南 | 2026-11-07 | <https://earlylore.com/blog/saas-landing-page-design-and-hero-examples> | <https://earlylore.com/zh/blog/saas-landing-page-design-and-hero-examples> |
+| Vibe Coding with Market Intelligence: Using EarlyLore MCP & SKILL.md in Claude Code and Cursor / 在 Claude Code 与 Cursor 中接入 EarlyLore MCP 与 SKILL.md | 2026-11-07 | <https://earlylore.com/blog/vibe-coding-market-research-with-mcp-and-claude-code> | <https://earlylore.com/zh/blog/vibe-coding-market-research-with-mcp-and-claude-code> |
+| How Breakout Indie & AI Products Acquire Users: Traffic Channels & Revenue Signals / 独立开发与 AI 新品如何冷启动获客 | 2026-11-07 | <https://earlylore.com/blog/indie-hacker-acquisition-channels-and-revenue-signals> | <https://earlylore.com/zh/blog/indie-hacker-acquisition-channels-and-revenue-signals> |
+| Generative Engine Optimization (GEO) & llms.txt Playbook for SaaS Products (2026) / GEO 与 llms.txt 实战指南 | 2026-11-11 | <https://earlylore.com/blog/generative-engine-optimization-and-llms-txt-guide> | <https://earlylore.com/zh/blog/generative-engine-optimization-and-llms-txt-guide> |
+| How to Run SaaS Competitor Analysis: Tracking Traffic, Pricing Diffs & Positioning / SaaS 竞品分析实战 | 2026-11-07 | <https://earlylore.com/blog/saas-competitor-analysis-traffic-and-pricing-monitoring> | <https://earlylore.com/zh/blog/saas-competitor-analysis-traffic-and-pricing-monitoring> |
+| The One-Person AI Company Playbook: Portfolio Patterns from 90,000+ Indie Builders / 一人公司与独立开发者实战手册 | 2026-11-07 | <https://earlylore.com/blog/solo-founder-and-one-person-ai-company-playbook> | <https://earlylore.com/zh/blog/solo-founder-and-one-person-ai-company-playbook> |
+| Vertical AI Agents & Voice Agent SaaS: Where New Founders Are Winning in 2026 / 垂直 AI 智能体与语音 Agent 赛道解析 | 2026-11-07 | <https://earlylore.com/blog/vertical-ai-agents-and-voice-agent-saas-niches> | <https://earlylore.com/zh/blog/vertical-ai-agents-and-voice-agent-saas-niches> |
+| Best Startup Idea Validation & SaaS Market Research Tools Compared (2026) / 创业点子验证与竞品调研工具横评 | 2026-11-14 | <https://earlylore.com/blog/best-startup-idea-validation-and-market-research-tools-compared> | <https://earlylore.com/zh/blog/best-startup-idea-validation-and-market-research-tools-compared> |
+| Cursor vs. Windsurf vs. Bolt.new vs. Lovable: AI Coding & Vibe Coding Traffic, Pricing & Retention Case Study (2026) / AI 编程产品流量与定价深度对比 | 2026-11-10 | <https://earlylore.com/blog/cursor-vs-windsurf-vs-bolt-vs-lovable-traffic-and-pricing-benchmark> | <https://earlylore.com/zh/blog/cursor-vs-windsurf-vs-bolt-vs-lovable-traffic-and-pricing-benchmark> |
+| Supabase, Clerk, Resend, PostHog & Cal.com: How Breakout Developer & COSS Products Scale Traffic and Revenue / 开发者工具与开源商业化增长案例 | 2026-11-10 | <https://earlylore.com/blog/supabase-clerk-resend-posthog-coss-growth-and-pricing-case-studies> | <https://earlylore.com/zh/blog/supabase-clerk-resend-posthog-coss-growth-and-pricing-case-studies> |
+| Lean High-ARPU Micro-SaaS Case Studies: How 990+ Indie Products Earn $5K–$50K/mo MRR with Under 10,000 Monthly Visits / 月访问量不足 1 万的高客单价 Micro-SaaS 案例 | 2026-11-10 | <https://earlylore.com/blog/lean-high-arpu-micro-saas-case-studies-under-10k-visits> | <https://earlylore.com/zh/blog/lean-high-arpu-micro-saas-case-studies-under-10k-visits> |
 <!-- articles:end -->
 
-Guides cite live dataset figures, including Design DNA totals that other EarlyLore pages print differently. Use the guide's own date and wording when you cite it. See [data sources](../docs/data-sources-and-attribution.md).
+Guides cite live dataset figures; use each guide's own publication date and wording when quoting. See [data sources](../docs/data-sources-and-attribution.md).

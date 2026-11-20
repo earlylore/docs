@@ -1,50 +1,43 @@
 # Hosted MCP server and Skill
 
-The Claude Code command, the skill save folders, and the plan rows in [Access and usage](#access-and-usage-on-2026-11-14) were read again on 2026-11-14 from <https://earlylore.com/mcp>. The per-tool quota table remains the 2026-11-10 reading. Both dates are documentation checks, not product releases. The installable skill added in this repository is [earlylore-product-architect](../skills/earlylore-product-architect/SKILL.md). Which copy is canonical for installation is recorded in [skill-source.md](skill-source.md).
+Reviewed and synced on **2026-11-20** against <https://earlylore.com/mcp>, <https://earlylore.com/zh/mcp>, <https://earlylore.com/skill.md>, <https://earlylore.com/llms.txt>, and <https://earlylore.com/pricing>. For ready-to-copy client config files and the MCP Registry card (`server.json`), see the dedicated setup repository [earlylore/earlylore-mcp](https://github.com/earlylore/earlylore-mcp).
 
-Reviewed on 2026-11-10 against:
-
-- <https://earlylore.com/mcp>
-- <https://earlylore.com/zh/mcp>
-- <https://earlylore.com/skill.md>
-- <https://earlylore.com/llms.txt>
-- <https://earlylore.com/pricing>
+This repository also keeps a [CC BY 4.0](../LICENSE) installable copy of the skill at [earlylore-product-architect](../skills/earlylore-product-architect/SKILL.md). How the website copy and docs copy compare is recorded in [skill-source.md](skill-source.md).
 
 No authenticated call was made to the MCP endpoint while writing this page. Examples use the placeholder `el_live_YOUR_TOKEN` only.
 
 ## Endpoint and key
 
-EarlyLore hosts an HTTP MCP server for coding agents.
+EarlyLore hosts a stateless Streamable HTTP MCP server (`com.earlylore/research`) for coding agents.
 
-| | |
-|---|---|
+| Item | Value |
+| --- | --- |
 | Endpoint | `https://earlylore.com/api/mcp` |
 | Auth | `Authorization: Bearer el_live_...` |
+| Server card | <https://earlylore.com/api/mcp/server-card> |
+| AI catalog & skills index | <https://earlylore.com/.well-known/ai-catalog.json> · <https://earlylore.com/.well-known/agent-skills/index.json> |
 | Where the key is created | <https://earlylore.com/account> |
-| Product guide | <https://earlylore.com/mcp> |
+| Product guide | <https://earlylore.com/mcp> ([中文](https://earlylore.com/zh/mcp)) |
+| Hosted setup repo | <https://github.com/earlylore/earlylore-mcp> |
 | Skill spec | <https://earlylore.com/skill.md> |
 | Skill name | `earlylore-product-architect` |
 
-The `/mcp` page says keys start with `el_live_`, that only a SHA-256 hash is stored, and that the key uses the same account quotas as evaluation reports, design extraction, and product profiles. Create the key while signed in. Replace the placeholder locally. Do not commit a real key, and do not open a pull request with one.
+Personal tokens start with `el_live_`, are hashed at rest (SHA-256), and consume the same account quotas as web evaluation reports, Design DNA extractions, and full product profiles. Keep real tokens local—never commit one to Git or paste one into a pull request.
 
 This server is account-scoped. Bulk feeds and higher MCP quotas are the commercial offer on <https://earlylore.com/pricing#custom-data-api> (`hello@earlylore.com`). Vaneform's separate API and MCP docs are linked from [data-sources-and-attribution.md](data-sources-and-attribution.md).
 
-Clients named on the public MCP page and its FAQ: Claude Code, Codex, Cursor, Antigravity, Windsurf, and Cline, plus any MCP client that can use streamable HTTP with a Bearer token.
+Supported clients include **Claude Code, Codex, Cursor, Antigravity, Windsurf, and Cline**, plus any MCP client supporting Streamable HTTP (`2025-11-25`, `2025-06-18`, `2025-03-26`) with a Bearer token.
 
 ## Connect Claude Code
-
-The command published on `/mcp` and `/skill.md`:
 
 ```bash
 claude mcp add --transport http earlylore https://earlylore.com/api/mcp \
   --header "Authorization: Bearer el_live_YOUR_TOKEN"
 ```
 
-## Connect Cursor, Codex, Antigravity, or Claude Desktop
+## Connect Cursor, Codex, Antigravity, Windsurf, or Cline
 
-This JSON is the 2026-11-10 reading. On 2026-11-14 the page still had Codex, Cursor, and Other / JSON tabs, and only the Claude Code command was in the server HTML. Copy the current block from <https://earlylore.com/mcp> when the tab text differs from the document below.
-
-On 2026-11-10 the public `/mcp` page used one JSON document for these clients. For the "Codex / Cursor" tab, add it to `.cursor/mcp.json` in the project or to `~/.cursor/mcp.json`. For the "Antigravity / Generic JSON" tab, the page said to add the same document to `mcp_config.json`.
+Add this JSON block to `.cursor/mcp.json` (Cursor), `mcp_config.json` (Antigravity), or your client's `mcpServers` config (templates in [earlylore/earlylore-mcp/configs](https://github.com/earlylore/earlylore-mcp/tree/main/configs)):
 
 ```json
 {
@@ -59,74 +52,65 @@ On 2026-11-10 the public `/mcp` page used one JSON document for these clients. F
 }
 ```
 
-On 2026-11-10, Windsurf was named as a supported client on the same page. A separate Windsurf-only file path was not published there. A FAQ answer still present in the site bundle on 2026-11-14 names Claude Code, Cursor, Antigravity, Windsurf, and Cline for streamable HTTP with a Bearer token. Use the endpoint and header those clients document.
-
 ## Install the Skill
 
-The canonical skill name is `earlylore-product-architect`. It is the `name` in <https://earlylore.com/skill.md> and in <https://earlylore.com/.well-known/agent-skills/index.json>. This repository now contains an installable copy at [skills/earlylore-product-architect/SKILL.md](../skills/earlylore-product-architect/SKILL.md). The website file and this file are two copies. [skill-source.md](skill-source.md) says how to compare them.
+Install directly from [earlylore/earlylore-mcp](https://github.com/earlylore/earlylore-mcp) (exact mirror of <https://earlylore.com/skill.md>):
 
-After this directory is on the default branch, the skills CLI command is:
+```bash
+npx skills add earlylore/earlylore-mcp --skill earlylore-product-architect
+```
+
+Or from this repository:
 
 ```bash
 npx skills add earlylore/docs --skill earlylore-product-architect
 ```
 
-The CLI discovers `skills/<name>/SKILL.md`. The frontmatter `name` and the directory name are the same, which is what the Agent Skills specification requires. No npm package is published for this skill.
+Save-folder aliases on `.claude/skills/earlylore/SKILL.md` and `.agents/skills/earlylore/SKILL.md` also work locally; see [skill-source.md](skill-source.md).
 
-On 2026-11-14 the setup page showed these save folders:
+The default safe lookup flow reads only public catalog evidence ([competitor-lookup.md](competitor-lookup.md)); saving notes, running new evaluations, live capture, and paid Design DNA extraction should wait for explicit user intent.
 
-- Claude Code: `.claude/skills/earlylore/SKILL.md`
-- Codex: `.agents/skills/earlylore/SKILL.md`
+## Access and usage on 2026-11-20
 
-`earlylore` is a folder alias. The 2026-11-10 reading of the same page also named `~/.claude/skills/earlylore-research/SKILL.md` and `.cursorrules`. The `earlylore-research` folder was not in the 2026-11-14 server HTML. New installs use `earlylore-product-architect`. An older file under `earlylore` or `earlylore-research` can be replaced with this skill. Do not keep a second `SKILL.md` whose name and directory disagree.
+Synced with <https://earlylore.com/pricing> and <https://earlylore.com/mcp>:
 
-The hosted skill's setup block repeats the Claude Code command above and then defines four workflows. The installable skill keeps the competitor lookup as the default and gates notes, new evaluations, live capture, and design extraction on an explicit request in the current message.
+| Plan | Price | MCP calls | Full product details | Key allowances |
+| --- | --- | --- | --- | --- |
+| **Free** | `$0` | `30 / day` | `5 / month` | 5 Design DNA tries · 3 lifetime Standard evals · Compare 2 products |
+| **Trial Pack** | `$1.9` one-time | Follows plan | `3` full details | 1 Deep + 1 Standard eval · 10 Deep 1v1 chat turns |
+| **Idea Polish Pack** | `$14.9` one-time | Follows plan | `25` full details | 3 Deep + 3 Standard evals · 30 Deep 1v1 turns · 3 role boosts · 6 site analyses |
+| **Validation Sprint Pack** | `$29` one-time | Follows plan | `60` full details | 8 Deep + 8 Standard evals · 80 Deep 1v1 turns · 8 role boosts · 15 site analyses |
+| **Pro** | `$228/year` or `$29/month` | `200 / day` | `500 / month` | Unlimited Design DNA · 25 Deep + 50 Standard evals/mo · Compare 4 · Markdown export |
+| **Max** | `$540/year` or `$69/month` | `1,000 / day` | `5,000 / month` | Unlimited Design DNA · 80 Deep + 160 Standard evals/mo · Compare 8 · Stealth slots |
 
-## Access and usage on 2026-11-14
-
-The server-rendered <https://earlylore.com/mcp> page showed:
-
-| Plan | MCP calls | Full product details |
-| --- | --- | --- |
-| Free | 30 / day | 30 / month |
-| Pro | 200 / day | 300 / month |
-| Max | 1,000 / day | 3,000 / month |
-
-The same page said every tool call counts toward the daily MCP limit, product inspection uses the full-detail allowance, and design analysis and new evaluations use their own allowances. It also showed a banner, "New users: 24h Pro free". That banner is page text from 2026-11-14, not a quota encoded in the skill. Confirm <https://earlylore.com/pricing> before quoting a price or a limit.
-
-Codex, Cursor, and Other / JSON were tab labels on that page. Only the Claude Code command was present in the server HTML. Copy the other client blocks from the live page. The JSON document under [Connect Cursor, Codex, Antigravity, or Claude Desktop](#connect-cursor-codex-antigravity-or-claude-desktop) remains the 2026-11-10 reading.
+Evaluation packs never expire, and 100% of pack spend within 14 days (up to `$29`) credits toward Pro or Max Annual at checkout. Always confirm <https://earlylore.com/pricing> before purchasing.
 
 ## Tools and quotas
 
-The table below is the tool list printed on <https://earlylore.com/mcp> on 2026-11-10. It is an older per-tool reading. The plan rows in the previous section are the 2026-11-14 page. Plan checkout, pack contents, and the comparison matrix on [/pricing](https://earlylore.com/pricing) are the billing pages. Re-read both before quoting a limit. The pages have used different wording for some caps. Argument names checked against `GET https://earlylore.com/api/mcp` on 2026-11-14 are in [the skill tool reference](../skills/earlylore-product-architect/references/tools.md).
+Argument schemas are documented in [the skill tool reference](../skills/earlylore-product-architect/references/tools.md).
 
-| Tool | Availability printed on `/mcp` | Quota cost printed on `/mcp` |
-|---|---|---|
-| `earlylore_search_products` | Free top 30; Pro / Max all lists and filters | Zero |
-| `earlylore_inspect_product` | Free 30 / packs / Pro 300 / Max 3,000 per month | Monthly profile quota |
-| `earlylore_get_evaluation` | All plans, including packs | Zero |
-| `earlylore_get_design_dna` | Free 5 tries; Pro / Max unlimited | Zero on Pro / Max |
-| `earlylore_get_niche_benchmark` | Pro / Max | Zero |
-| `earlylore_compare_products` | Free 2 / Pro 4 / Max 8 | Monthly profile quota |
-| `earlylore_get_market_pulse` | Free macro view; Pro / Max 249 niches | Zero |
-| `earlylore_inspect_creator` | Free profiles and top 30; Pro / Max all filters | Zero |
-| `earlylore_list_my_workspace` | All plans, including packs | Zero |
-| `earlylore_save_note_or_evaluate` | Packs / Pro / Max | Notes are free; a new evaluation uses an evaluation credit |
-| `earlylore_get_marketing_playbook` | Free macro view and samples; Pro / Max 249 niches | Zero |
+| Tool | Availability | Quota cost |
+| --- | --- | --- |
+| `earlylore_search_products` | Free top results; Pro / Max full filters | Daily MCP call |
+| `earlylore_inspect_product` | Free 5 / Packs / Pro 500 / Max 5,000 per month | Monthly profile quota (with deduplication) |
+| `earlylore_get_evaluation` | All plans, including packs | Daily MCP call (reads stored report) |
+| `earlylore_get_design_dna` | Free 5 tries; Pro / Max unlimited | Design DNA allowance on Free / Packs; 0 on Pro / Max |
+| `earlylore_get_niche_benchmark` | Pro / Max | Daily MCP call |
+| `earlylore_compare_products` | Free 2 / Pro 4 / Max 8 products | Monthly profile quota for new inspections |
+| `earlylore_get_market_pulse` | Free macro view; Pro / Max 249 niches | Daily MCP call |
+| `earlylore_inspect_creator` | Free profiles; Pro / Max full filters | Daily MCP call |
+| `earlylore_list_my_workspace` | All plans, including packs | Daily MCP call |
+| `earlylore_save_note_or_evaluate` | Notes on all plans; new evaluations consume eval credits | Notes free; new evaluations consume an eval credit |
+| `earlylore_get_marketing_playbook` | Free macro view & samples; Pro / Max 249 niches | Daily MCP call |
 
-The live `earlylore_get_evaluation` description calls the report a 4-lane Argon blueprint (5-pillar scores, core bet, consensus dealbreakers, two strategic paths, an MVP prescription, and an 8-seat roundtable). The 2026-11-06 changelog entry still describes a 6-lane pipeline. Treat those as dated public texts. See [CHANGELOG.md](../CHANGELOG.md).
-
-Design DNA counts also disagree across public pages (9,700+ and 40,900+). The tool returns the tokens for the style or competitor you request. Quote the response and the page, not a frozen total from this file.
-
-Prices checked on `/pricing` and `/llms-full.txt` the same day: packs at $1.9, $4.9, and $9.9; Pro at $129/year or $45/quarter; Max at $249/year or $79/quarter. A free signed-in plan is listed. Confirm the live price before you buy.
+The live `earlylore_get_evaluation` blueprint summarizes a 4-lane Argon architecture (5-pillar scores, Core Bet, consensus dealbreakers, two strategic paths, MVP prescription, and an 8-seat roundtable on Deep evaluations). Historical `v1.7` notes on 6-lane pipelines remain in [CHANGELOG.md](../CHANGELOG.md).
 
 ## Example: evaluation prescription to a hero and pricing page
 
-This is workflow WF-01 on `/mcp` ("Idea Evaluation + Hero Design DNA"), the flow the page marks as using no AI-compute quota for those two reads. It matches Workflow A in `/skill.md`. You need a completed evaluation already stored on the same account as the API key.
+This matches Workflow A in `/skill.md` and requires a completed evaluation stored in the workspace linked to your API key:
 
-1. Connect MCP with your own key, using one of the configs above.
-2. Ask the coding agent to run the prompt below. It should call `earlylore_get_evaluation` first and `earlylore_get_design_dna` second.
-3. If the account is Pro or Max, Workflow A also calls `earlylore_get_niche_benchmark` for the primary category and anchors the entry and pro tiers to that benchmark. `/mcp` lists that tool as Pro / Max.
+1. Connect MCP with your personal key (`el_live_YOUR_TOKEN`).
+2. Run the prompt below so the agent calls `earlylore_get_evaluation` and `earlylore_get_design_dna` (plus `earlylore_get_niche_benchmark` on Pro or Max):
 
 ```text
 Call earlylore_get_evaluation to read my latest completed idea evaluation report.
@@ -138,18 +122,10 @@ Build the hero and pricing page for this project.
 Keep the product name, copy, and assets original to this project.
 ```
 
-What the skill tells the agent to take from those calls:
+The skill's additional published workflows on `/skill.md` are:
 
-- From the evaluation: `strategyDebate.coreBet`, `strategyDebate.consensusTrap`, the MVP headline, subheadline, form and style, and the pricing model, tiers, and hook.
-- From Design DNA: the returned CSS variables (`--background`, `--surface`, `--foreground`, `--muted-foreground`, `--accent`, `--radius`, `--font-heading`, `--font-body`), the color ratios, the hero layout, and the avoid list.
-- From the niche benchmark, when the plan includes it: median entry price, median top price, and trial share.
+- **Workflow B**: Search the catalog and inspect a competitor dossier + optional Design DNA.
+- **Workflow C**: Audit your local landing page and pricing against live competitors and optionally write workspace notes via `earlylore_save_note_or_evaluate`.
+- **Workflow D**: Draft channel launch posts from your local repo using `earlylore_get_marketing_playbook`.
 
-The skill's other published workflows, all on `/skill.md`:
-
-- **Workflow B.** Search the catalog and inspect one product dossier, including optional Design DNA.
-- **Workflow C.** Read the local landing page and pricing, then compare them with live competitors and write notes back with `earlylore_save_note_or_evaluate`.
-- **Workflow D.** Draft launch posts from the local repo using `earlylore_get_marketing_playbook`.
-
-A name-search walkthrough, with a synthetic sample and no evaluation or saved note, is in [competitor-lookup.md](competitor-lookup.md).
-
-A written walkthrough of MCP setup is the 2026-11-07 guide [Vibe Coding with Market Intelligence](https://earlylore.com/blog/vibe-coding-market-research-with-mcp-and-claude-code) ([中文](https://earlylore.com/zh/blog/vibe-coding-market-research-with-mcp-and-claude-code)).
+For a read-only walkthrough, see [competitor-lookup.md](competitor-lookup.md) and [Vibe Coding with Market Intelligence](https://earlylore.com/blog/vibe-coding-market-research-with-mcp-and-claude-code) ([中文](https://earlylore.com/zh/blog/vibe-coding-market-research-with-mcp-and-claude-code)).
