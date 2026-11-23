@@ -225,6 +225,9 @@ function checkBody(body, references) {
     "earlylore_compare_products",
     "earlylore_save_note_or_evaluate",
     "earlylore_get_marketing_playbook",
+    "earlylore_get_incumbent_alternatives",
+    "earlylore_get_demand_opportunities",
+    "earlylore_get_product_comparison",
   ]);
   const combined = `${body}\n${references}`;
   for (const match of combined.matchAll(/\bearlylore_[a-z_]+\b/g)) {

@@ -1,14 +1,14 @@
 # Hosted MCP server and Skill
 
-Reviewed and synced on **2026-11-20** against <https://earlylore.com/mcp>, <https://earlylore.com/zh/mcp>, <https://earlylore.com/skill.md>, <https://earlylore.com/llms.txt>, and <https://earlylore.com/pricing>. For ready-to-copy client config files and the MCP Registry card (`server.json`), see the dedicated setup repository [earlylore/earlylore-mcp](https://github.com/earlylore/earlylore-mcp).
+Reviewed and synced on **2026-11-23** against <https://earlylore.com/mcp>, <https://earlylore.com/zh/mcp>, <https://earlylore.com/skill.md>, <https://earlylore.com/llms.txt>, and <https://earlylore.com/pricing>. For ready-to-copy client config files and the MCP Registry card (`server.json`), see the dedicated setup repository [earlylore/earlylore-mcp](https://github.com/earlylore/earlylore-mcp).
 
-This repository also keeps a [CC BY 4.0](../LICENSE) installable copy of the skill at [earlylore-product-architect](../skills/earlylore-product-architect/SKILL.md). How the website copy and docs copy compare is recorded in [skill-source.md](skill-source.md).
+This repository also keeps a [CC BY 4.0](../LICENSE) installable lookup skill at [earlylore-product-architect](../skills/earlylore-product-architect/SKILL.md). How the website copy and docs copy compare is recorded in [skill-source.md](skill-source.md).
 
 No authenticated call was made to the MCP endpoint while writing this page. Examples use the placeholder `el_live_YOUR_TOKEN` only.
 
 ## Endpoint and key
 
-EarlyLore hosts a stateless Streamable HTTP MCP server (`com.earlylore/research`) for coding agents.
+EarlyLore hosts a stateless Streamable HTTP MCP server (`com.earlylore/research`, `14` tools) for coding agents.
 
 | Item | Value |
 | --- | --- |
@@ -60,7 +60,7 @@ Install directly from [earlylore/earlylore-mcp](https://github.com/earlylore/ear
 npx skills add earlylore/earlylore-mcp --skill earlylore-product-architect
 ```
 
-Or from this repository:
+Or install the CC BY 4.0 lookup skill from this repository:
 
 ```bash
 npx skills add earlylore/docs --skill earlylore-product-architect
@@ -70,40 +70,43 @@ Save-folder aliases on `.claude/skills/earlylore/SKILL.md` and `.agents/skills/e
 
 The default safe lookup flow reads only public catalog evidence ([competitor-lookup.md](competitor-lookup.md)); saving notes, running new evaluations, live capture, and paid Design DNA extraction should wait for explicit user intent.
 
-## Access and usage on 2026-11-20
+## Access and usage on 2026-11-23
 
 Synced with <https://earlylore.com/pricing> and <https://earlylore.com/mcp>:
 
 | Plan | Price | MCP calls | Full product details | Key allowances |
 | --- | --- | --- | --- | --- |
-| **Free** | `$0` | `30 / day` | `5 / month` | 5 Design DNA tries · 3 lifetime Standard evals · Compare 2 products |
-| **Trial Pack** | `$1.9` one-time | Follows plan | `3` full details | 1 Deep + 1 Standard eval · 10 Deep 1v1 chat turns |
-| **Idea Polish Pack** | `$14.9` one-time | Follows plan | `25` full details | 3 Deep + 3 Standard evals · 30 Deep 1v1 turns · 3 role boosts · 6 site analyses |
-| **Validation Sprint Pack** | `$29` one-time | Follows plan | `60` full details | 8 Deep + 8 Standard evals · 80 Deep 1v1 turns · 8 role boosts · 15 site analyses |
-| **Pro** | `$228/year` or `$29/month` | `200 / day` | `500 / month` | Unlimited Design DNA · 25 Deep + 50 Standard evals/mo · Compare 4 · Markdown export |
-| **Max** | `$540/year` or `$69/month` | `1,000 / day` | `5,000 / month` | Unlimited Design DNA · 80 Deep + 160 Standard evals/mo · Compare 8 · Stealth slots |
+| **Free** | `$0` | `30 / day` | `5 / month` | 5 Design DNA tries · 3 lifetime Standard evals (15 lifetime chat turns) · Compare 2 |
+| **7-day Pro Trial** | `$0` (auto on sign-up, no card) | `30 / day` | `6` full details | 1 Deep + 3 Standard evals · 10 Deep chat turns · all 249 niches · 10% annual upgrade discount |
+| **Idea Polish Pack** | `$9.9` one-time | Follows plan | `25` full details | 3 Deep + 3 Standard evals · 30 Deep 1v1 turns · 3 role boosts · 6 site analyses |
+| **Validation Sprint Pack** | `$19` one-time | Follows plan | `60` full details | 8 Deep + 8 Standard evals · 80 Deep 1v1 turns · 8 role boosts · 15 site analyses |
+| **Pro** | `$19/month` or `$144/year` (`$12/mo`) | `200 / day` | `500 / month` | Unlimited Design DNA · 25 Deep + 50 Standard evals/mo (`12/day` cap) · Compare 4 · Export |
+| **Max** | `$49/month` or `$384/year` (`$32/mo`) | `1,000 / day` | `5,000 / month` | Unlimited Design DNA · 80 Deep + 160 Standard evals/mo (`25/day` cap) · Compare 8 · Stealth slots |
 
-Evaluation packs never expire, and 100% of pack spend within 14 days (up to `$29`) credits toward Pro or Max Annual at checkout. Always confirm <https://earlylore.com/pricing> before purchasing.
+Evaluation packs never expire, and 100% of pack spend within 14 days (up to `$19`) credits toward Pro or Max Annual at checkout. Optional **30-Day** and **1-Year USD One-Time Passes** are available on Pro and Max with zero auto-renewal. Always confirm <https://earlylore.com/pricing> before purchasing.
 
-## Tools and quotas
+## Tools and quotas (14 tools)
 
 Argument schemas are documented in [the skill tool reference](../skills/earlylore-product-architect/references/tools.md).
 
 | Tool | Availability | Quota cost |
 | --- | --- | --- |
-| `earlylore_search_products` | Free top results; Pro / Max full filters | Daily MCP call |
-| `earlylore_inspect_product` | Free 5 / Packs / Pro 500 / Max 5,000 per month | Monthly profile quota (with deduplication) |
+| `earlylore_search_products` | Free top results; Pro / Max full filters across 540K+ products | Daily MCP call |
+| `earlylore_inspect_product` | Free 5 / Trial 6 / Packs / Pro 500 / Max 5,000 per month | Monthly profile quota (with deduplication) |
 | `earlylore_get_evaluation` | All plans, including packs | Daily MCP call (reads stored report) |
-| `earlylore_get_design_dna` | Free 5 tries; Pro / Max unlimited | Design DNA allowance on Free / Packs; 0 on Pro / Max |
-| `earlylore_get_niche_benchmark` | Pro / Max | Daily MCP call |
+| `earlylore_get_design_dna` | Free 5 tries; Pro / Max unlimited across 130K+ analyzed sites | Design DNA allowance on Free / Packs; 0 on Pro / Max |
+| `earlylore_get_niche_benchmark` | Pro / Max (plus 7-day Pro Trial) | Daily MCP call |
 | `earlylore_compare_products` | Free 2 / Pro 4 / Max 8 products | Monthly profile quota for new inspections |
 | `earlylore_get_market_pulse` | Free macro view; Pro / Max 249 niches | Daily MCP call |
 | `earlylore_inspect_creator` | Free profiles; Pro / Max full filters | Daily MCP call |
 | `earlylore_list_my_workspace` | All plans, including packs | Daily MCP call |
 | `earlylore_save_note_or_evaluate` | Notes on all plans; new evaluations consume eval credits | Notes free; new evaluations consume an eval credit |
 | `earlylore_get_marketing_playbook` | Free macro view & samples; Pro / Max 249 niches | Daily MCP call |
+| `earlylore_get_incumbent_alternatives` | All plans (140+ commercial software incumbents) | Daily MCP call |
+| `earlylore_get_demand_opportunities` | All plans (quote-backed community demand & MVP wedges) | Daily MCP call |
+| `earlylore_get_product_comparison` | All plans (empirical 1v1 battlecards) | Daily MCP call |
 
-The live `earlylore_get_evaluation` blueprint summarizes a 4-lane Argon architecture (5-pillar scores, Core Bet, consensus dealbreakers, two strategic paths, MVP prescription, and an 8-seat roundtable on Deep evaluations). Historical `v1.7` notes on 6-lane pipelines remain in [CHANGELOG.md](../CHANGELOG.md).
+The live `earlylore_get_evaluation` blueprint summarizes a 4-lane Argon architecture (5-pillar scores, Core Bet, consensus dealbreakers, two strategic paths, MVP prescription, and an 8-seat roundtable on Deep evaluations).
 
 ## Example: evaluation prescription to a hero and pricing page
 
@@ -124,7 +127,7 @@ Keep the product name, copy, and assets original to this project.
 
 The skill's additional published workflows on `/skill.md` are:
 
-- **Workflow B**: Search the catalog and inspect a competitor dossier + optional Design DNA.
+- **Workflow B**: Search the 540K+ catalog and inspect a competitor dossier, alternatives, 1v1 comparisons, demand signals, and optional Design DNA.
 - **Workflow C**: Audit your local landing page and pricing against live competitors and optionally write workspace notes via `earlylore_save_note_or_evaluate`.
 - **Workflow D**: Draft channel launch posts from your local repo using `earlylore_get_marketing_playbook`.
 

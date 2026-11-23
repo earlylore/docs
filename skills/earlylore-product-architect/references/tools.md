@@ -1,6 +1,6 @@
 # Public tool list
 
-Read on 2026-11-14 from `GET https://earlylore.com/api/mcp`. That request returned public metadata for `com.earlylore/research` version `1.1.0` and protocol versions `2025-11-25`, `2025-06-18`, and `2025-03-26`. No authenticated `POST` and no tool call were made. The same names were present in the Markdown representation of <https://earlylore.com/mcp> that day.
+Verified on **2026-11-23** against `https://earlylore.com/api/mcp` (`14` hosted tools), <https://earlylore.com/mcp>, and <https://earlylore.com/pricing>. Supports MCP protocol versions `2025-11-25`, `2025-06-18`, and `2025-03-26`.
 
 If a connected session advertises a different argument, the session schema wins. Do not send an argument this table lists when the session schema has dropped it.
 
@@ -17,8 +17,11 @@ If a connected session advertises a different argument, the session schema wins.
 | `earlylore_compare_products` | false | `slugsOrDomains` | `slugsOrDomains` |
 | `earlylore_save_note_or_evaluate` | false | `action` | `action`, `title`, `body`, `url`, `evaluationId`, `ideaText`, `tier`, `isPrivate` |
 | `earlylore_get_marketing_playbook` | true | none | `category`, `group`, `form`, `play`, `platform`, `productName`, `oneLiner`, `painPoint`, `incumbent`, `metric` |
+| `earlylore_get_incumbent_alternatives` | true | none | `incumbentSlug`, `q`, `ossOnly` |
+| `earlylore_get_demand_opportunities` | true | none | `categorySlug`, `groupSlug`, `limit` |
+| `earlylore_get_product_comparison` | true | none | `pairSlug`, `q`, `categorySlug`, `ossOnly` |
 
-Enums recorded that day:
+Enums and bounds:
 
 - `earlylore_search_products.mode`: `auto`, `fast`, `semantic`
 - `earlylore_search_products.list`: `growing`, `revenue`, `new`
@@ -34,14 +37,15 @@ Enums recorded that day:
 - `earlylore_get_marketing_playbook.form`: `web`, `app`, `extension`, `mcp_server`, `cli`, `api`
 - `earlylore_get_marketing_playbook.play`: `launch_post`, `demo_video`, `quick_build`, `build_in_public`, `giveaway`, `versus`, `hot_take`, `milestone`
 - `earlylore_get_marketing_playbook.platform`: `x`, `reddit`, `hn`, `ph`, `xhs`
+- `earlylore_get_demand_opportunities.limit`: 1–40 (default 15)
 
-Gates recorded in those descriptions:
+Gates recorded in tool descriptions:
 
-- `earlylore_get_niche_benchmark` requires Pro or Max.
+- `earlylore_get_niche_benchmark` requires Pro or Max (or an active 7-day Pro Trial).
 - `earlylore_compare_products` caps the list at Free 2, Pro 4, and Max 8.
-- `earlylore_list_my_workspace` says it uses no evaluation or product-detail credits, and that daily MCP call limits still apply.
-- Search, inspect, compare, and Design DNA were not marked read-only. Design DNA and inspect can start analysis or attach a capture when the matching flag is set.
+- `earlylore_list_my_workspace` uses no evaluation or product-detail credits; daily MCP call limits still apply.
+- Search, inspect, compare, and Design DNA are non-read-only in tool hints. Design DNA and inspect can start analysis or attach a capture when the matching flag is set.
 
-The hosted skill at <https://earlylore.com/skill.md> listed play ids `Workflow_pain`, `how_built`, and `Before_after` on 2026-11-14. Those strings are not in the `play` enum above. Do not send them.
+The hosted skill at <https://earlylore.com/skill.md> previously listed legacy play ids `Workflow_pain`, `how_built`, and `Before_after` on 2026-11-14. Those strings are not in the `play` enum above. Do not send them.
 
-The page at <https://earlylore.com/mcp> on 2026-11-14 showed Free at 30 MCP calls per day and 30 full product details per month, Pro at 200 calls per day and 300 details per month, and Max at 1,000 calls per day and 3,000 details per month. An older per-tool matrix from 2026-11-10 remains in the docs repository file `docs/mcp-and-skill.md`. Quote the page you read, with the date.
+The live pages at <https://earlylore.com/mcp> and <https://earlylore.com/pricing> on **2026-11-23** show Free at `30` MCP calls/day and `5` full product details/month (with an automatic 7-day Pro Trial providing `6` full product details), Pro at `200` calls/day and `500` details/month (`$19/mo` or `$144/yr`), Max at `1,000` calls/day and `5,000` details/month (`$49/mo` or `$384/yr`), plus non-expiring Evaluation Packs (`$9.9` / `$19`).

@@ -29,7 +29,7 @@ Records are re-checked when the source moves. An observation stays separate from
 
 EarlyLore does not promise that an idea will succeed. Where a product has not published revenue, the record says so. Traffic is an estimate, not server logs from the product. Design DNA describes a captured first screen. It is not permission to copy another product's brand, copy, or assets.
 
-The public changelog has described the evaluation pipeline as both 6-lane (2026-11-06) and 4-lane (2026-11-08). Use the live [/mcp](https://earlylore.com/mcp) page and the dated changelog entry when you need the current pipeline description. This method page does not freeze a lane count.
+The current evaluation engine runs a **4-lane concurrent pipeline** (an 8-seat orthogonal roundtable for Deep evaluations; a 4-seat fast screening for Standard evaluations). Use the live [/mcp](https://earlylore.com/mcp) and [/evaluate](https://earlylore.com/evaluate) pages for current architecture details.
 
 ## Research loop
 
